@@ -8,11 +8,10 @@ using Microsoft.Extensions.Configuration;
 using static System.Net.Mime.MediaTypeNames;
 using System.ComponentModel;
 
-FileInfo fi1 = new FileInfo(@"./dbsettings.txt");
-if (!fi1.Exists)
+FileInfo file = new FileInfo(@"./dbsettings.txt");
+if (!file.Exists)
 {
-    //Create a file to write to.
-    using (StreamWriter sw = fi1.CreateText())
+    using (StreamWriter sw = file.CreateText())
     {
         sw.WriteLine("Host=localhost;\nPort=5432;\nDatabase=*****;\nUsername=postgres;\nPassword=****");
     }

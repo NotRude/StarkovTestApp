@@ -20,15 +20,6 @@ namespace StarkovTestApp
         {
             var substring = file.Split('\n');
             List<string> rowList = substring.ToList();
-            //for(var i = 0; i < rowList.Count; i++)
-            //{
-            //    if (rowList[i].FirstOrDefault() == '\t')
-            //    {
-            //        Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + rowList[i] + "\"");
-            //        rowList.Remove(rowList[i]);
-            //        i--;
-            //    }
-            //}
             return rowList;
         }
     }

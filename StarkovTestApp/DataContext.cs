@@ -27,8 +27,6 @@ namespace StarkovTestApp
             catch
             {
                 Console.WriteLine("Неверно введён доступ к базе данных в dbsettings.txt");
-                //var app = new ConsoleApp();
-                //app.Start();
             }
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
