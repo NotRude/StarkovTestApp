@@ -123,7 +123,7 @@ class ConsoleApp
             Console.WriteLine("Не верный формат файла");
             return;
         }
-        using (StreamReader reader = new StreamReader(@"C:\Users\vsleo\OneDrive\Рабочий стол\data\employees.tsv"))
+        using (StreamReader reader = new StreamReader(path))
         {
             text = reader.ReadToEnd();
         }

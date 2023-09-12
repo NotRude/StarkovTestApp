@@ -20,15 +20,15 @@ namespace StarkovTestApp
         {
             var substring = file.Split('\n');
             List<string> rowList = substring.ToList();
-            for(var i = 0; i < rowList.Count; i++)
-            {
-                if (rowList[i].FirstOrDefault() == '\t')
-                {
-                    Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + rowList[i] + "\"");
-                    rowList.Remove(rowList[i]);
-                    i--;
-                }
-            }
+            //for(var i = 0; i < rowList.Count; i++)
+            //{
+            //    if (rowList[i].FirstOrDefault() == '\t')
+            //    {
+            //        Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + rowList[i] + "\"");
+            //        rowList.Remove(rowList[i]);
+            //        i--;
+            //    }
+            //}
             return rowList;
         }
     }
@@ -78,7 +78,6 @@ namespace StarkovTestApp
                 var isFullInfo = true;
                 if (splitedRow.Length != 4)
                 {
-                    Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + String.Join(row, " ") + "\"");
                     continue;
                 };
                 //Название
@@ -124,7 +123,7 @@ namespace StarkovTestApp
                 var isFullInfo = true;
                 if (splitedRow.Length != 5)
                 {
-                    Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + String.Join(row, " ") + "\"");
+                    //return null;
                     continue;
                 }
                 //Подразделение
@@ -172,6 +171,11 @@ namespace StarkovTestApp
             for (var i = 0; i < rowList.Count; i++)
             {
                 var row = rowList[i];
+                var splitedRow = row.Split('\t');
+                if(row.Contains('\t'))
+                {
+                    return null;
+                }
                 if (row == "")
                 {
                     Console.WriteLine("Ошибка! Не удалось добавить запись: \"" + String.Join(row, " ") + "\"");
